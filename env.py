@@ -1,6 +1,6 @@
 import os
 
-os.environ["SECRET_KEY"] = "Start1ing_p01nt"
+os.environ["SECRET_KEY"] = "Maja-page"
 
 from os import path
 if path.exists("env.py"):
