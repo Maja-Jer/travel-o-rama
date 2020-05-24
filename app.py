@@ -18,8 +18,7 @@ def get_trips():
     print(mongo.db.trip_type.find())
     return render_template("trips.html", trip_type=mongo.db.trip_type.find())
 
-def hello():
-    return 'It is travel time soon'
+
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP', '0.0.0.0'),

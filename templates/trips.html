@@ -1,25 +1,21 @@
 {% extends 'base.html' %}
 {% block content %}
-    {% for trips in trip_type %}
-        {{trips.trip_type}}
-        {{trips.transport_code}}
-        {{trips.check_in}}
-        {{trips.check_out}}
-        {{trips.is_now}}
-    {% endfor %}
-
-<ul class="collapsible">
-    <li>
-      <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
-      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-    </li>
-    <li>
-      <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
-      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-    </li>
-    <li>
-      <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
-      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-    </li>
-  </ul>
+    <ul class="collapsible" data-collapsible="accordion">
+	    {% for trips in trip_type %}
+	    <li>
+		    <div class="collapsible-header">
+			
+                <div class="trips_header col s9">
+				    <i class="material-icons">expand_more</i><strong>{{trips.trip_location}}</strong> - {{trips.transport_code}}
+			    </div>
+		    </div>
+		    <div class="collapsible-body">
+			    <span>
+                    {{trips.check_in}} - {{trips.check_out}}
+                </span>
+                
+		    </div>
+	    </li>
+	{% endfor %}
+</ul>
 {% endblock %}
