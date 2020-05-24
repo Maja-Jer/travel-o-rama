@@ -18,7 +18,9 @@ def get_trips():
     print(mongo.db.trip_type.find())
     return render_template("trips.html", trip_type=mongo.db.trip_type.find())
 
-
+@app.route('/add_trip')
+def add_trip():
+    return render_template('addtrip.html')
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP', '0.0.0.0'),
