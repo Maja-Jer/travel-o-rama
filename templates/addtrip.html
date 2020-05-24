@@ -5,6 +5,19 @@
 <h3>Add Trip</h3>
 <div class="row">
 	<form action="" method="POST" class="col s12">
+        <!-- select option https://materializecss.com/select.html-->
+        <div class="row">
+         <div class="input-field col s12">
+         <i class="material-icons prefix">poll</i>
+            <select id="trip_type" name="trip_type_name">
+                <option value="" disabled selected>Choose your trip type</option>
+                {% for trips in trip_type %}
+                    <option value="{{trips.trip_type}}">{{trips.trip_type}}</option>
+                {% endfor %}
+            </select>
+            <label>Trip Type</label>
+        </div>
+        </div>
 		<div class="row">
 			<div class="input-field col s12">
 				<i class="material-icons prefix">card_travel</i>
