@@ -4,9 +4,14 @@
 	    {% for trips in trip_type %}
 	    <li>
 		    <div class="collapsible-header">
-			
+		        <div class="col s3">
+                    <i class="material-icons">expand_more</i>
+                    <a class="waves-effect waves-light btn btn-small blue">Edit</a>
+                    
+                </div>
+
                 <div class="trips_header col s9">
-				    <i class="material-icons">expand_more</i><strong>{{trips.trip_type}} - {{trips.trip_location}}</strong> - {{trips.transport_code}}
+				    <strong>{{trips.trip_type}} - {{trips.trip_location}}</strong> - {{trips.transport_code}}
 			    </div>
 		    </div>
 		    <div class="collapsible-body">

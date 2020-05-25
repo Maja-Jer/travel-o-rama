@@ -22,6 +22,13 @@ def get_trips():
 def add_trip():
     return render_template('addtrip.html', trip_type=mongo.db.trip_type.find())
 
+@app.route('/insert_trip', methods=['POST'])
+def insert_trip():
+    trips = mongo.db.trip_type
+    trips.insert_one(request.form.to_dict())
+    return redirect(url_for('get_trips'))
+
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP', '0.0.0.0'),
             port=os.environ.get('PORT', '5000'),
