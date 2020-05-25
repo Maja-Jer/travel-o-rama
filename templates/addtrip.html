@@ -2,67 +2,71 @@
 
 <!--form template taken from Materialize https://materializecss.com/text-inputs.html-->
 
+
 <h3>Add Trip</h3>
 <div class="row">
 	<form action="" method="POST" class="col s12">
 
-        <!-- select option https://materializecss.com/select.html-->
+		<!-- select option https://materializecss.com/select.html-->
 
-        <div class="row">
-         <div class="input-field col s12">
-         <i class="material-icons prefix">poll</i>
-            <select id="trip_type" name="trip_type_name">
-                <option value="" disabled selected>Choose your trip type</option>
+		<div class="row">
+
+
+			<div class="input-field col s12">
+				<i class="material-icons prefix">poll</i>
+				<select id="trip_type" name="trip_type_name">
+                <option value="selected">Choose your trip type</option>
                 {% for trips in trip_type %}
+                a
                     <option value="{{trips.trip_type}}">{{trips.trip_type}}</option>
                 {% endfor %}
             </select>
-            <label>Choose your trip type</label>
-        </div>
-        </div>
-		
+				
+			</div>
+
+		</div>
+
 		<div class="row">
 			<div class="input-field col s12">
 				<i class="material-icons prefix">location_on</i>
-				<textarea name="trip_location" name="trip_location" type="text" class="materialize-textarea"></textarea>
-                <label for="icon_prefix">Where are you travelling?</label>
-            </div>
+				<textarea name="trip_location" type="text" class="materialize-textarea"></textarea>
+				<label for="icon_prefix">Where are you travelling?</label>
+			</div>
 
-        </div>
+		</div>
 
-        <div class="row">
+		<div class="row">
 			<div class="input-field col s12">
 				<i class="material-icons prefix">label-outline</i>
-				<textarea name="transport_code" name="transport_code" type="text" class="materialize-textarea"></textarea>
-                <label for="icon_prefix">Reservation Code</label>
-            </div>
+				<textarea name="transport_code" type="text" class="materialize-textarea"></textarea>
+				<label for="icon_prefix">Reservation Code</label>
+			</div>
 
-        </div>
+		</div>
 
-       
-        <!-- Switch https://materializecss.com/switches.html-->
-        <div class="switch">
-            <label>
+		<!-- Switch https://materializecss.com/switches.html-->
+		<div class="switch">
+			<label>
                 <input id="is_now" name="is_now" type="checkbox">
                 <span class="lever"></span>
                 Is Now
             </label>
-        </div>
-        <!-- Date pickers https://materializecss.com/pickers.html -->
-        <div class="row">
-            <div class="input-field col s12">
-                <i class="material-icons prefix">today</i>
-                <textarea name="check_in" name="check_in" type="text" class="datepicker"></teaxtarea>
-                <label for="icon_prefix">Check-In</label>
-            </div>
-            </div>
-        <div class="row">
-            <div class="input-field col s12">
-                <i class="material-icons prefix">today</i>
-                <textarea name="check_out" name="check_out" type="text" class="datepicker"></teaxtarea>
-                <label for="icon_prefix">Check-Out</label>
-            </div>
-            </div>
-    </form>
+		</div>
+		<!-- Date pickers https://materializecss.com/pickers.html -->
+		<div class="row">
+			<div class="input-field col s12">
+				<i class="material-icons prefix">today</i>
+				<input type="text" class="datepicker">
+				<label for="icon_prefix">Check-In</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s12">
+				<i class="material-icons prefix">today</i>
+				<input type="text" class="datepicker">
+				<label for="icon_prefix">Check-Out</label>
+			</div>
+		</div>
+	</form>
 </div>
 {% endblock %}
