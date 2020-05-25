@@ -3,7 +3,7 @@
 <!--form template taken from Materialize https://materializecss.com/text-inputs.html-->
 
 
-<h3>Add Trip</h3>
+<h3>Edit Trip</h3>
 <div class="row">
 	<form action="{{ url_for('insert_trip')}}" method="POST" class="col s12">
 
@@ -17,7 +17,11 @@
 				<select id="trip_type" name="trip_type_name">
                 <option value="selected">Choose your trip type</option>
                 {% for trips in trip_type %}
+                    {% if trips.trip_type == trip.trip_type %}
+                    <option value="{{trips.trip_type}}" selected>{{trips.trip_type}}</option>
+                    {% else %}
                     <option value="{{trips.trip_type}}">{{trips.trip_type}}</option>
+                    {% endif %}
                 {% endfor %}
             </select>
 				
@@ -28,7 +32,7 @@
 		<div class="row">
 			<div class="input-field col s12">
 				<i class="material-icons prefix">location_on</i>
-				<textarea name="trip_location" type="text" class="materialize-textarea"></textarea>
+				<textarea name="trip_location" type="text" class="materialize-textarea">{{trip.trip_location}}</textarea>
 				<label for="icon_prefix">Where are you travelling?</label>
 			</div>
 
@@ -37,7 +41,7 @@
 		<div class="row">
 			<div class="input-field col s12">
 				<i class="material-icons prefix">label-outline</i>
-				<textarea name="transport_code" type="text" class="materialize-textarea"></textarea>
+				<textarea name="transport_code" type="text" class="materialize-textarea">{{trip.transport_code}}</textarea>
 				<label for="icon_prefix">Reservation Code</label>
 			</div>
 
@@ -46,7 +50,11 @@
 		<!-- Switch https://materializecss.com/switches.html-->
 		<div class="switch">
 			<label>
-                <input id="is_now" name="is_now" type="checkbox">
+                {% if trip.is_now%}
+                    <input id="is_now" name="is_now" type="checkbox" checked>
+                {% else %}
+                    <input id="is_now" name="is_now" type="checkbox">
+                {% endif %}    
                 <span class="lever"></span>
                 Is Now
             </label>
@@ -55,14 +63,14 @@
 		<div class="row">
 			<div class="input-field col s12">
 				<i class="material-icons prefix">today</i>
-				<input name="check_in" type="text" class="datepicker">
+				<input id="check_in" type="text" class="datepicker">
 				<label for="icon_prefix">Check-In</label>
 			</div>
 		</div>
 		<div class="row">
 			<div class="input-field col s12">
 				<i class="material-icons prefix">today</i>
-				<input name="check_out" type="text" class="datepicker">
+				<input id="check_out" type="text" class="datepicker">
 				<label for="icon_prefix">Check-Out</label>
 			</div>
 		</div>
@@ -70,7 +78,7 @@
         <div class="row">
 			<div class="input-field col s12">
 				<i class="material-icons prefix">location_city</i>
-				<textarea name="trip_location" type="text" class="materialize-textarea"></textarea>
+				<textarea name="sights" type="text" class="materialize-textarea">{{trip.sights}}</textarea>
 				<label for="icon_prefix">Sights to visit</label>
 			</div>
 
@@ -79,7 +87,7 @@
         <div class="row">
 			<div class="input-field col s12">
 				<i class="material-icons prefix">local_dining</i>
-				<textarea name="trip_location" type="text" class="materialize-textarea"></textarea>
+				<textarea name="restaurants" type="text" class="materialize-textarea">{{trip.restaurants}}</textarea>
 				<label for="icon_prefix">Restaurants to try</label>
 			</div>
 
@@ -88,17 +96,31 @@
         <div class="row">
 			<div class="input-field col s12">
 				<i class="material-icons prefix">landscape</i>
-				<textarea name="trip_location" type="text" class="materialize-textarea"></textarea>
+				<textarea name="activities" type="text" class="materialize-textarea">{{trip.activities}}</textarea>
 				<label for="icon_prefix">Things to experience</label>
 			</div>
 
 		</div>
 
         <div class="row">
-            <button class="btn waves-effect waves-light" type="submit" name="action">Add trip
+            <button class="btn waves-effect waves-light" type="submit" name="action">Edit trip
                 <i class="material-icons right">playlist_add</i>
             </button>
         </div>
 	</form>
 </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+		integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        check_in = Date.parse('{{trip.check_in}}');
+        $('#check_in').pickadate('picker').set('select', check_in, { format: 'dd/mm/yyyy' }). trigger('change')
+    });
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        check_out = Date.parse('{{trip.check_out}}');
+        $('#check_out').pickadate('picker').set('select', check_out, { format: 'dd/mm/yyyy' }). trigger('change')
+    });
 {% endblock %}

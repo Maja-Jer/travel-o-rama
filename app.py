@@ -28,6 +28,12 @@ def insert_trip():
     trips.insert_one(request.form.to_dict())
     return redirect(url_for('get_trips'))
 
+@app.route('/edit_trip/<trip_id>')
+def edit_trip(trip_id):
+    the_trip =  mongo.db.trips.find_one({"_id": ObjectId(trip_id)})
+    all_trips =  mongo.db.trip_type.find()
+    return render_template('edittrip.html', trip=the_trip,
+                categories=all_categories)
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP', '0.0.0.0'),
