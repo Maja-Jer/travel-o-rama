@@ -28,10 +28,10 @@ def insert_trip():
     trips.insert_one(request.form.to_dict())
     return redirect(url_for('get_trips'))
 
-@app.route('/edit_trip/<trip_type_id>')
-def edit_trip(trip_type_id):
-    the_trip_type =  mongo.db.trip_types.find_one({"_id": ObjectId(trip_type_id)})
-    return render_template('edittriptype.html', trip_type=the_trip_type)
+#@app.route('/edit_trip/<trip_type_id>')
+#def edit_trip(trip_type_id):
+    #the_trip_type =  mongo.db.trip_types.find_one({"_id": ObjectId(trip_type_id)})
+    #return render_template('edittriptype.html', trip_type=the_trip_type)
 
 @app.route('/edit_trip/<trip_type_id>')
 def edit_trip(trip_type_id):
