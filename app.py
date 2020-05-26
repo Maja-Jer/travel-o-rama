@@ -14,13 +14,13 @@ mongo = PyMongo(app)
 @app.route('/get_trips')
 def get_trips():
     return render_template("trips.html", 
-                           trips=mongo.db.trips.find())
+    trips=mongo.db.trips.find())
 
 
 @app.route('/add_trip')
 def add_trip():
     return render_template('addtrip.html',
-                           categories=mongo.db.categories.find())
+    categories=mongo.db.categories.find())
 
 
 @app.route('/insert_trip', methods=['POST'])
@@ -66,8 +66,18 @@ def get_categories():
     return render_template('categories.html',
     categories=mongo.db.categories.find())
 
+@app.route('/edit_category/<category_id>')
+def edit_category(category_id):
+    return render_template('editcategory.html',
+    category=mongo.db.categories.find_one(
+    {'_id': ObjectId(category_id)}))
 
-
+@app.route('/update_category/<category_id>', methods=['POST'])
+def update_category(category_id):
+    mongo.db.categories.update(
+        {'_id': ObjectId(category_id)},
+        {'category_name': request.form.get('category_name')})
+    return redirect(url_for('get_categories'))
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP', '0.0.0.0'),
