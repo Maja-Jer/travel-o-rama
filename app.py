@@ -61,7 +61,10 @@ def delete_trip(trip_id):
     return redirect(url_for('get_trips'))
 
 
-
+@app.route('/get_categories')
+def get_categories():
+    return render_template('categories.html',
+    categories=mongo.db.categories.find())
 
 
 

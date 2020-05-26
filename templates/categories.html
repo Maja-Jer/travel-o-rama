@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row">
+
+<h3>Categories</h3>
+	<ul class="collapsible" data-collapsible="accordion">
+		{% for category in tripks %}
+		<li>
+			<div class="collapsible-header">
+				<div class="col s3">
+					<i class="material-icons">expand_more</i>
+					<a href="" class="waves-effect waves-light btn btn_small">Delete</a>
+					<a href="" class="waves-effect waves-light btn btn_small blue">Edit</a>
+
+				</div>
+
+				<div class="trips_header col s9">
+					<strong>{{trip.trip_location}}</strong> - {{trip.transport_code}}
+				</div>
+			</div>
+			<div class="collapsible-body">
+				<span>
+                    {{trip.check_in}} - {{trip.check_out}}
+                </span>
+
+			</div>
+		</li>
+		{% endfor %}
+	</ul>
+
+</div>
+{% endblock %}
