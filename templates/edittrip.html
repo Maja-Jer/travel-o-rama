@@ -5,7 +5,7 @@
 
 <h3>Edit Trip</h3>
 <div class="row">
-	<form action="{{ url_for('insert_trip')}}" method="POST" class="col s12">
+	<form action="{{ url_for('update_trip', trip_id=trip._id) }}" method="POST" class="col s12">
 
 		<!-- select option https://materializecss.com/select.html-->
 
@@ -16,11 +16,11 @@
 				<i class="material-icons prefix">poll</i>
 				<select id="trip_type" name="trip_type_name">
                 <option value="selected">Choose your trip type</option>
-                {% for trip_type in trip_types %}
-                    {% if trip.trip_type == trip_type.trip_type %}
-                    <option value="{{trip_type.trip_type}}" selected>{{trip_type.trip_type}}</option>
+                {% for cat in categories %}
+                      {% if cat.category_name == trip.category_name%}
+                    <option value="{{cat.category_name}}" selected>{{cat.category_name}}</option>
                     {% else %}
-                    <option value="{{trip_type.trip_type}}">{{trip_type.trip_type}}</option>
+                    <option value="{{cat.category_name}}">{{cat.category_name}}</option>
                     {% endif %}
                 {% endfor %}
             </select>
