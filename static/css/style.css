@@ -32,8 +32,12 @@ nav .nav-wrapper {
     font-size: 30px;
 }
 
+.reservation-info {
+    margin: 0px;
+    padding: 0px;
+}
 .material-icons {
-    margin-left: 0px;
+    margin-right: 0px;
 
 }
 
@@ -49,7 +53,7 @@ nav ul a {
 nav .brand-logo {
     margin-right: 10px;
 }
-    .btn_small {
+.btn_small {
     height: 20px;
     width: 60px;
     line-height: 24px;
