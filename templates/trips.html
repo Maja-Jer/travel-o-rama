@@ -22,9 +22,14 @@
 			</div>
             </div>
 			<div class="collapsible-body active">
-				<span>
-                <p class="reservation-info">{{trip.check_in}}</p><p class="reservation-info">{{trip.check_out}}</p>
-            </span>
+				<!-- <span> -->
+                <p class="reservation-info">{{trip.check_in}}</p>
+                <p class="reservation-info">{{trip.check_out}}</p>
+                <p class="reservation-info">{{trip.is_now}}</p>
+                <p class="reservation-info">{{trip.sights}}</p>
+                <p class="reservation-info">{{trip.restaurants}}</p>
+                <p class="reservation-info">{{trip.activities}}</p>
+            <!-- </span> -->
 			</div>
 	</li>
 	{% endfor %}

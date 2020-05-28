@@ -10,19 +10,19 @@
 		<!-- select option https://materializecss.com/select.html-->
 
 		<div class="row">
-            <div class="row">
+			<div class="row">
 
-			<div class="input-field col s12">
-				<i class="material-icons prefix">poll</i>
-				<select id="trip" name="trip_name">
+				<div class="input-field col s12">
+					<i class="material-icons prefix">poll</i>
+					<select id="trip" name="trip_name">
                 <option value="selected">Choose your trip type</option>
                 {% for cat in categories %}
                     <option value="{{cat.category_name}}">{{cat.category_name}}</option>
                 {% endfor %}
             </select>
-				
+
+				</div>
 			</div>
-        </div>
 		</div>
 
 		<div class="row">
@@ -66,39 +66,39 @@
 				<label for="icon_prefix">Check-Out</label>
 			</div>
 		</div>
-
-        <div class="row">
+		<div class="row">
 			<div class="input-field col s12">
 				<i class="material-icons prefix">location_city</i>
-				<textarea name="trip_location" type="text" class="materialize-textarea"></textarea>
+				<textarea name="sights" type="text" class="materialize-textarea"></textarea>
 				<label for="icon_prefix">Sights to visit</label>
 			</div>
 
 		</div>
 
-        <div class="row">
+		<div class="row">
 			<div class="input-field col s12">
 				<i class="material-icons prefix">local_dining</i>
-				<textarea name="trip_location" type="text" class="materialize-textarea"></textarea>
-				<label for="icon_prefix">Restaurants to try</label>
+				<textarea name="restaurants" type="text" class="materialize-textarea"></textarea>
+				<label for="icon_prefix">Restaurants to cheeck-out</label>
 			</div>
 
 		</div>
 
-        <div class="row">
+		<div class="row">
 			<div class="input-field col s12">
 				<i class="material-icons prefix">landscape</i>
-				<textarea name="trip_location" type="text" class="materialize-textarea"></textarea>
+				<textarea name="experiences" type="text" class="materialize-textarea"></textarea>
 				<label for="icon_prefix">Things to experience</label>
 			</div>
 
 		</div>
 
-        <div class="row">
-            <button class="btn waves-effect waves-light" type="submit" name="action">Add trip
+
+		<div class="row">
+			<button class="btn waves-effect waves-light cyan" type="submit" name="action">Add trip
                 <i class="material-icons right">playlist_add</i>
             </button>
-        </div>
+		</div>
 	</form>
 </div>
 {% endblock %}

@@ -26,6 +26,7 @@ def add_trip():
 @app.route('/insert_trip', methods=['POST'])
 def insert_trip():
     trips =  mongo.db.trips
+    print(request.form)
     trips.insert_one(request.form.to_dict())
     return redirect(url_for('get_trips'))
 
