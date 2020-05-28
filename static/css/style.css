@@ -64,12 +64,15 @@ nav .brand-logo {
     .trips_header {
     margin-top: 5px;
     margin-left: 20px;
+    margin-right: 10px
     font-size: 15px;
 }
-
+    .collapsible-header {
+        padding: 5px;
+    }
 
     .material-icons {
-    margin-left: 0px;
+    margin-right: 0px;
 
 }
 

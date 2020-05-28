@@ -49,13 +49,16 @@ As a Travel-O-Rama user, I expect/want/need to:
 - The options that I have need to be laid out in an intuitive way that is easy for me to navigate and digest, so I don't have trouble finding functionalities I need
 - To be able to acces my trips easily and be able to edit or delete it without complications
 - As a user accessing this site from a mobile phone or tablet, I want the site to have been designed responsively so that it is still easy to navigate and use on my smaller devices.
+- As a user, I expect my trips to be saved, updated and deleted as I go through the steps to do so
+
+### Business Stories
+On the business side of things, I want/expect/need:
+- To be able to access existing entries and that data to be editable on the app. (I plan on building a log-in page in the future, so user will have access to their own database of trip that are editable)
+- To create, edit and delete entries
+- A user interface that is simple and easy to use, laid out in a logical way with clear steps 
+- To be able to crea
 
 
-
-
-User stories
-
-“As the user of the app, I want to be able to add information, edit and edelete information about my trips, so i acn stay organised and remember small bits and pieces that might slip my memory as time goes by. I also want to be able to use it and a trip planner.
 
 deployed page link: https://maja-jer.github.io/travel-o-rama
 
