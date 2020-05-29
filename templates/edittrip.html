@@ -63,14 +63,14 @@
 		<div class="row">
 			<div class="input-field col s12">
 				<i class="material-icons prefix">today</i>
-				<input id="check_in" type="text" class="datepicker">
+				<input id="check_in" type="text" class="datepicker">{{trip.chec_in}}</textarea>
 				<label for="icon_prefix">Check-In</label>
 			</div>
 		</div>
 		<div class="row">
 			<div class="input-field col s12">
 				<i class="material-icons prefix">today</i>
-				<input id="check_out" type="text" class="datepicker">
+				<input id="check_out" type="text" class="datepicker">{{trip.check_out}}</textarea>
 				<label for="icon_prefix">Check-Out</label>
 			</div>
 		</div>
@@ -96,7 +96,7 @@
         <div class="row">
 			<div class="input-field col s12">
 				<i class="material-icons prefix">landscape</i>
-				<textarea name="activities" type="text" class="materialize-textarea">{{trip.experiences}}</textarea>
+				<textarea name="activities" type="text" class="materialize-textarea">{{trip.activities}}</textarea>
 				<label for="icon_prefix">Things to experience</label>
 			</div>
 
