@@ -12,7 +12,7 @@
 			</div>
 			<div class="col s3">
 				<a href="{{url_for('delete_trip', trip_id=trip._id)}}"
-					class="waves-effect waves-light btn btn_small red lighten-1class=" browser-default>Delete</a>
+					class="waves-effect waves-light btn btn_small red lighten-1 class=" browser-default>Delete</a>
 				<a href="{{url_for('edit_trip', trip_id=trip._id)}}"
 					class="waves-effect waves-light btn btn_small cyan">Edit</a>
 			</div>
@@ -22,13 +22,31 @@
 			</div>
             </div>
 			<div class="collapsible-body active">
-				<!-- <span> -->
-                <p class="reservation-info">{{trip.check_in}}</p>
-                <p class="reservation-info">{{trip.check_out}}</p>
-                <p class="reservation-info">{{trip.is_now}}</p>
-                <p class="reservation-info">{{trip.sights}}</p>
-                <p class="reservation-info">{{trip.restaurants}}</p>
-                <p class="reservation-info">{{trip.activities}}</p>
+				<!-- I wasn't able to override Materialize's default styling, so I had to leave it as it is. This is something I want to work on more to understand for future projects -->
+                <p class="reservation-info">
+                    <i class="material-icons prefix">today</i>
+                    <label for="icon_prefix">Check-In: </label> {{trip.check_in}}
+                </p>
+                <p class="reservation-info">
+                    <i class="material-icons prefix">today</i>
+                    <label for="icon_prefix">Check-Out: </label> {{trip.check_out}}
+                </p>
+                <p class="reservation-info">
+                    <i class="material-icons prefix">access_time</i>
+                    <label for="icon_prefix">Is the reservation now? </label> {{trip.is_now}}
+                </p>
+                <p class="reservation-info">
+                    <i class="material-icons prefix">location_city</i>
+                    <label for="icon_prefix">Sights to visit: </label> {{trip.sights}}
+                </p>
+                <p class="reservation-info">
+                    <i class="material-icons prefix">local_dining</i>
+                    <label for="icon_prefix">Restaurants to check-out: </label> {{trip.restaurants}}
+                 </p>
+                <p class="reservation-info">
+                    <i class="material-icons prefix">landscape</i>
+                    <label for="icon_prefix">Things to experience</label> {{trip.experiences}}
+                </p>
             <!-- </span> -->
 			</div>
 	</li>

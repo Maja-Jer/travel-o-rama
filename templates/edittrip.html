@@ -96,7 +96,7 @@
         <div class="row">
 			<div class="input-field col s12">
 				<i class="material-icons prefix">landscape</i>
-				<textarea name="activities" type="text" class="materialize-textarea">{{trip.activities}}</textarea>
+				<textarea name="activities" type="text" class="materialize-textarea">{{trip.experiences}}</textarea>
 				<label for="icon_prefix">Things to experience</label>
 			</div>
 
@@ -117,11 +117,13 @@
         check_in = Date.parse('{{trip.check_in}}');
         $('#check_in').pickadate('picker').set('select', check_in, { format: 'dd/mm/yyyy' }). trigger('change')
     });
+</script>
 
 <script type="text/javascript">
     $(document).ready(function(){
         check_out = Date.parse('{{trip.check_out}}');
         $('#check_out').pickadate('picker').set('select', check_out, { format: 'dd/mm/yyyy' }). trigger('change')
     });
+</script>
 
 {% endblock %}
