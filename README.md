@@ -1,6 +1,6 @@
 # Introduction
 
-Travel-O-Rama was created by Maja Jercic, to serve all the travellers to organise and save their trip infprmation in one place.
+`Travel-o-Rama`(https://travel-o-rama.herokuapp.com/) was created by Maja Jercic, to serve all the travellers to organise and save their trip infprmation in one place.
 
 As a bit of wanderlust myself, I was always looking for an app where I could have all the details of my trips, reservation codes, places to visit, restaurants to go and try  delicious local food in and any experiences that would be a must-see. After Google Trips has been retired, I have struggled to find an app that would sasify my needs, so this was a perfct opportunity to build it myself. The goal for this page is to allow everyone to save their own trips and use them as a single reference when sightseeing, instead of swapping between multiple apps at the same time.
 
@@ -206,6 +206,59 @@ Travel-o-Rama database has 2 collections:
 This project uses HTML, CSS and Python programming languages.
 
 # Testing
+## Desktop testing
+Below is a detailed account of all the manual testing that has been done to confirm all areas of the site work as expected.
+
+All steps on desktop were repeated in browsers: Firefox, Chrome and Internet Explorer and on two different desktop screen sizes
+
+**Navbar**
+
+- Click on the logo to test, confirm it takes the user to the home page.
+- Click the Home link, confirm it takes the user to the home page.
+- Click the add a trip link, confirm it takes the user to the add a trip page.
+- Click the Add a category link, confirm it takes the user to the add a categopry page page.
+
+**Home page**
+- open the collapsible to confirm it shows additional trip details
+- click on Delete button to delete the trip
+- click on edit button to go to edit trip page, where we have to be able to edit trip details which will in turn save on the home page after Edit trip button has been clicked
+
+**Add a Trip page**
+- type in the information in every section of the trip
+- click on a button Add a trip at the bottom of the page and then go to Home page to confirm the new trip has been saved
+
+**Add a category page**
+- click on adda a category line and write the name of the new category the suer wants to save
+- click on add a category button to save the new category
+- go to Add a trip to test if the new category saved
+
+
+## Tablet and mobile testing
+All steps below were repeated to test mobile and tablet specific elements on my Huawei phone and tablet, in both the firefox browser and samsung internet browser.
+
+Responsive design waw also tested in the Chrome Developer Tools device simulators on all options and orientations.
+
+**Navbar**
+
+- Click on the logo to test, confirm it takes the user to the home page.
+- Click the Home link, confirm it takes the user to the home page.
+- Click the add a trip link, confirm it takes the user to the add a trip page.
+- Click the Add a category link, confirm it takes the user to the add a categopry page page.
+
+**Home page**
+- open the collapsible to confirm it shows additional trip details
+- click on Delete button to delete the trip
+- click on edit button to go to edit trip page, where we have to be able to edit trip details which will in turn save on the home page after Edit trip button has been clicked
+
+**Add a Trip page**
+- type in the information in every section of the trip
+- click on a button Add a trip at the bottom of the page and then go to Home page to confirm the new trip has been saved
+
+**Add a category page**
+- click on adda a category line and write the name of the new category the suer wants to save
+- click on add a category button to save the new category
+- go to Add a trip to test if the new category saved
+
 
 # Deployment
 ## How to run locally?
@@ -227,6 +280,7 @@ How to set up your Mongo Atlas account `here`(https://docs.atlas.mongodb.com/).
 ### Instructions
 - Save a copy of the github repository located at https://github.com/Maja-Jer/travel-o-rama by clicking the "download zip" button at the top of the page and extracting the zip file to your chosen folder. If you have Git installed on your system, you can clone the repository with the following command.
 ```git clone https://github.com/Maja-Jer/travel-o-rama```
+
 - Follow instructions in your IDE how to open such funtionalities
 
 ## Heroku Deployment
@@ -261,7 +315,28 @@ In the "Manual Deployment" section of this page, made sure the master branch is 
 
 The site is now successfully deployed.
 
+## Bugs I was unable to fix
 
-deployed page link: https://maja-jer.github.io/travel-o-rama
+In Edit trips, the system doesn't save the edited checkin and check out dates, as well as the experinces. I have checked the code multiple times, with students from Ci and tutors and we were unable to understand what is the readon. DB collection documents names are identical to the code, but we weren't able to find a solution. That is something i will have to look into in the future if I want to expand this application
 
-Navbar page link: https://materializecss.com/navbar.html
+I was unable to find a way to override Materialize's default font size in labels in trips collapsibles. I would manage to do it when testing in Inspect code, but when i would copy that code in the style.css, it wouldn't work. I have left the code I tried to use in the file and commented it
+
+# Credits
+
+I used Materialize as a library and I have used the code from there to build the form, icons, buttons, navbar. i have specified in the code  more details
+I was influenced by the Task Manager project in our CI course and I have adapted it to suit my needs.
+
+# Acknowledgements
+
+Getting to this project has been a struggle, dealing with the impact of the Corona virus and losing my job, so the motivation to continue with the Python modules has been fleeting, but with the help of my fellow students I have managed to see this project through, even though I am aware it needs improvements. Submitting has been been an accomplishment in itself
+Thank you to everyone in Code Institute that helped me in any way while building this site:
+dickv_mentor for his feedback and suggestions how to improve my project.
+IgorB-lead for listening and helping out, even last minute
+Anthony for encouraging me all the time and just being in my corner and pushing me
+tutors
+My small group of Croatian students
+The entire Slack community for just being there, encouraging and helping
+
+# Disclaimer
+
+The content of this website is educational purposes only.
