@@ -8,6 +8,7 @@ As a bit of wanderlust myself, I was always looking for an app where I could hav
 ## Goals
 
 ### Visitor Goals
+
 The central target audience for Trip_O-Rama are:
 - Traveller, no age limit
 - English-speaking (for the beginning)
@@ -23,6 +24,7 @@ Why does it meet the goals?
 - The app allows adding new trips, new trip categories, editing the ones that have already been saved and deleting trips for better organisation
 
 ### Business Goals
+
 In an advanced version, some businesses could use Travel-O-Rama:
 - Airlines
 - Flight search engines
@@ -38,12 +40,14 @@ Business user goals are:
 - Value for money (for now the app is a student project, but I would like to build on this app and start using it, so I would like to ad this goal now.)
 
 ### Travel-O-Rama Goals
+
 - Provide an easy-to use and effective app for travellers to stay organised during the trip and find information about a specific trip
 - So that I can learn and practice frontend and backend programming for the first time. To combine the use of HTML, CSS, Bootstrap and JavaScript with Python, MongoDB, Flask and Jinja
 - While a student project for now, the future goal is to implement more features and have it used by friends and family at the beginning to test it. Down the line, the plan is to include ads  by different businesses and have the app ready for a more wide-spread use.
 
 ## User stories
 ### Visitor Stories
+
 As a Travel-O-Rama user, I expect/want/need to:
 - To find what I am looking for easily , I want the layout of the site to make sense so I am not confused or put off using it.
 - The options that I have need to be laid out in an intuitive way that is easy for me to navigate and digest, so I don't have trouble finding functionalities I need
@@ -52,12 +56,210 @@ As a Travel-O-Rama user, I expect/want/need to:
 - As a user, I expect my trips to be saved, updated and deleted as I go through the steps to do so
 
 ### Business Stories
+
 On the business side of things, I want/expect/need:
 - To be able to access existing entries and that data to be editable on the app. (I plan on building a log-in page in the future, so user will have access to their own database of trip that are editable)
 - To create, edit and delete entries
 - A user interface that is simple and easy to use, laid out in a logical way with clear steps 
-- To be able to crea
+- To be able to create, edit and delete entries in the page
+- A user interface that is simple and easy to use, that is laid out in a logical way with clear indications where necessary about the type and format of the data I need to provide.
 
+## Design Choices
+
+Travel-o-Rama has an overall friendly feel with emphasis on providing ands finisng information in a bite-size, easy format. The following design choices were made with that in mind:
+The background is white and non-imposing
+
+**Fonts**
+
+- I have kept `Segoue UI`that is default for Materialize as it is easy to read and it complements the styling of the page. Also, it is very easy to read when using smaller screens and that is another reason why i chose to stary with this Fonts
+
+**Colour scheme**
+
+I have kept the colour scheme to the shades of blue as it has a relaxing effect on the users viewing the page. I have found that in multiple research, and I'm linking one [here](https://www.verywellmind.com/the-color-psychology-of-blue-2795815)
+Shades of blue used:
+0D4F8B for the fonts in h4 and trip.html for the list of saved trips
+00B2EE for the navbar background as it provides a nice contrast to the white font colour of the navbar
+
+Materialise colours for the buttons in trips.html:
+red lighten-1 for the Delete button
+cyan for the edit button, add trip button in addtrip.html and add category in addcategory.html
+
+## Wireframes
+
+There are the wifreames built with `Balsamiq`(https://balsamiq.com/)
+
+I have created the wireframes for all 3 pages. The page is planned to look the same on all screen sizes (excluding the responsivness of the buttons on trips.html)
+- Home
+- Add a Trip
+- Add categories
+
+The wireframes are hosted in a google doc and anyone with the `link`(https://docs.google.com/document/d/1VeDi4zn4yRVsI5jna1Ylv9NS7TKhib07MXxNQAs9W8k/edit?usp=sharing) can access the document
+
+# Features
+
+## Existing features
+
+###Navbar
+
+- The logo is on the top left side
+- On the right hand side we have: Home, Add a trip, Add categories
+- The navbar is collapsed into a burger icon on small screens.
+
+###Home page
+
+**Home page features** 
+
+- the list of saved trips which allows the user to edit or delete the saved trip
+- a collapsible which opens up to show more details saved when adding a trip
+- when editing a trip, a page opens up which looks exactly like Add a Trip, but it already has the details of the trip already saved and ready for editing. to complete the editing process, the user needs to click on a button at the bottom of the page that allows him to save the edited changes. At that moment the home page reflects the updates
+- when deleting a trip, it is enough to click on the Delete button of a trip the User wants to delete
+
+###Add a trip
+
+When opening "Add a trip page", the user sees a list of options they can write the information about their trip.
+
+**Add a trip features**
+
+- Trip category, something that will be looked into with more detail on how to filter trips and their views in a future version of the app. Because of that it doesn't show in the Trips page for now
+- Trip location
+- Reservation code for the accommodation
+- Check in date
+- Check-out date
+- option to choose if the trip is happening now
+- option to save the sights
+- Option to save the restaurants to visit during the trip
+- Option to save the experinces the traveller is interesting to try out
+- Button which saves the trip upon clicking on it
+
+### Add a Category
+
+For this page I never planned on having a delete function as I didn't feel like it was something to be used for now, but I might reconsider and implement it in the future
+
+**Add a Category features**
+
+- a small icon and a line on to which the users can add a name of a trip category they wish to use for future trips
+- a button that saves a category and allows it to be selected in the database and can be selected when adding a trip
+
+##Features left to implement
+
+- Register and Log in Page
+- Filter according to trip categories
+- Deleting categories
+
+# Information architecture
+
+## Databae choices
+
+I have decided to use MongoDB as the objects are easily accessed for the purposes of this project
+
+### Data storage types
+
+The types of data stored in MongoDB for this project are:
+
+- ObjectId
+- Strings
+
+### Data structure
+
+Travel-o-Rama database has 2 collections:
+
+- categories
+- trips
+
+**Categories collection**
+
+| Title         | Key in DB      | Data type  |
+| ------------- | -------------  | ---------- |
+|  categories   | category_name  | string     |
+
+**Trips collection**
+| Title                          | Key in DB      | Data type  |
+| ------------------------------ | -------------  | ---------- |
+|  Choose your trip type         | trip_name      | string     |
+|  Where are you travelling?     | trip_name      | string     |
+|  Reservation Code              | transport_code | string     |
+|  Is now                        | is_now         | string     |
+|  Check-In                      | check_in       | string     |
+|  Check-Out                     | check_out      | string     |
+|  Sights to visit               | sights         | string     |
+|  Restaurants to try            | restaurants    | string     |
+|  Things to experience          | category_name  | string     |
+
+# Technologies used
+## Tools
+
+- `Gitpod`(https://gitpod.io/) is the IDE used for developing this project.
+- Git to handle version control.
+- `MongoDB Atlas`(https://cloud.mongodb.com) is the database for this project
+- `GitHub`(https://github.com) to store and share all project code remotely.
+- `Am I responsive?`(http://ami.responsivedesign.is) to create the images in this readme file of each page displayed on different screen sizes.
+
+## Libraries
+
+- JQuery to simplify DOM manipulation.
+- Materialize to simplify the structure of the website and make the website responsive easily.
+- PyMongo to make communication between Python and MongoDB possible.
+- Flask to construct and render pages.
+- Jinja to simplify displaying data from the backend of this project smoothly and effectively in html.
+
+## Languages
+This project uses HTML, CSS and Python programming languages.
+
+# Testing
+
+# Deployment
+## How to run locally?
+
+To run this project on your own IDE follow the instructions below:
+
+Ensure you have the following tools:
+
+- An IDE such as GitPod
+The following must be installed on your machine or implemented in the iDE if it's an online one like GitPod:
+
+- PIP
+- Python 3
+- Git
+
+An account at MongoDB Atlas or MongoDB running locally on your machine.
+How to set up your Mongo Atlas account `here`(https://docs.atlas.mongodb.com/).
+
+### Instructions
+- Save a copy of the github repository located at https://github.com/Maja-Jer/travel-o-rama by clicking the "download zip" button at the top of the page and extracting the zip file to your chosen folder. If you have Git installed on your system, you can clone the repository with the following command.
+```git clone https://github.com/Maja-Jer/travel-o-rama```
+- Follow instructions in your IDE how to open such funtionalities
+
+## Heroku Deployment
+
+To deploy Travel-o-Rama to Heroku, take the following steps:
+
+- Create a **requirements.txt** file using the terminal **command pip freeze > requirements.txt**.
+
+- Create a Procfile with the terminal command **echo web: python app.py > Procfile**.
+
+- **git add** and **git commit** the new requirements and Procfile and then git push the project to GitHub.
+
+- Create a new app on the Heroku website by clicking the "New" button in your dashboard. Give it a name and set the region to Europe.
+
+- From the Heroku dashboard of your newly created application, click on "Deploy" > "Deployment method" and select GitHub.
+
+- Confirm the linking of the heroku app to the correct GitHub repository.
+
+- In the Heroku dashboard for the application, click on "Settings" > "Reveal Config Vars".
+
+- Set the following config vars:
+Debug: false 
+Mongo URI: mongodb+srv://<username>:<password>@<cluster_name>-qtxun.mongodb.net/<database_name>?retryWrites=true&w=majority
+port: 5000
+Secret_key: <your password>
+
+To get you MONGO_URI read the MongoDB Atlas documentation `here`(https://docs.atlas.mongodb.com/) 
+
+In the heroku dashboard, click "Deploy".
+
+In the "Manual Deployment" section of this page, made sure the master branch is selected and then click "Deploy Branch".
+
+The site is now successfully deployed.
 
 
 deployed page link: https://maja-jer.github.io/travel-o-rama
